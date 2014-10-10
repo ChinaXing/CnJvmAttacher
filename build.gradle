@@ -24,6 +24,7 @@ task fatJar(type: Jar) {
                 'Main-Class': 'com.cn.jvm.tool.CnJvmAttacher'
     }
     baseName = project.name
+    destinationDir = file("dist")
     from { (configurations.compile - configurations.provided).collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
