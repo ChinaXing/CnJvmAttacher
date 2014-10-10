@@ -1,7 +1,7 @@
 CnJvmAttacher
 ===============
 
-Jvm attach tool for load an agent to running Java Machine
+Jvm attach tool for load an agent into running Java Machine
 
 This tool just help you load an java agent quickly.
 
