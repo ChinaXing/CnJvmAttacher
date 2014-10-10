@@ -1,4 +1,4 @@
-CnJvmAttatacher
+CnJvmAttacher
 ===============
 
 Jvm attach tool for load an agent to running Java Machine
