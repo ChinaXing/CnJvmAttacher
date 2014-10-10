@@ -1,0 +1,37 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    provided
+    compile.extendsFrom provided
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile group: 'org.javassist' , name : 'javassist', version :'3.18.2-GA'
+    provided files("${System.getProperty('java.home')}/../lib/tools.jar")
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Jvm attacher',
+                'Implementation-Version': version,
+                'Main-Class': 'com.cn.jvm.tool.CnJvmAttacher'
+    }
+    baseName = project.name
+    from { (configurations.compile - configurations.provided).collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+task debug << {
+    println(System.getProperties());
+    for (i in configurations.compile.minus(configurations.provided)) {
+        println(i)
+    }
+}
