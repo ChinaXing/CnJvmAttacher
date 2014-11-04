@@ -7,8 +7,6 @@ This tool just help you load an java agent quickly.
 
 use it as following maner :
 
-java -cp /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.51.x86_64/lib/tools.jar:CnJvmAttacher-1.0.jar:. com.cn.jvm.tool.CnJvmAttacher 
-
 ```
   java -cp .:/usr/lib/jvm/jdk1.7.0_65.jdk/lib/tools.jar:CnJvmAttacher-1.0.jar:.   \
         com.cn.jvm.tool.CnJvmAttacher  1565 /root/CnAgent.jar \
